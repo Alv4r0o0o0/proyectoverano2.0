@@ -1,0 +1,72 @@
+<ion-header  >
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <div> <img src="assets/icon/logo2.png" class="logito"></div>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="!usuarioAutenticado">
+
+
+  <ion-card>
+    <ion-card-header>
+      
+      <ion-title class="titulo">Registro</ion-title>
+    
+    </ion-card-header>
+    <ion-card-content> <ion-list>
+        <ion-list>
+          <ion-item>
+            <ion-input type="text" [(ngModel)]="nombre" label="Nombre" label-placement="floating" placeholder="Ingrese su Nombre" required ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" [(ngModel)]="apellido" label="Apellido" label-placement="floating" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="number" [(ngModel)]="telefono" label="Telefono" label-placement="floating" placeholder="+569-88888888" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="email" [(ngModel)]="mail" label="Email" labelPlacement="floating" required></ion-input>
+           </ion-item>
+           <ion-item>         
+            <ion-input [(ngModel)]="clave" label="Contraseña" type="password" label-placement="floating" placeholder="Ingrese contraseña" required></ion-input>
+          </ion-item>
+          <ion-item> 
+            <ion-input [(ngModel)]="confirmarClave" label="Confirmar contraseña" type="password" label-placement="floating" placeholder=" Confirmar contraseña" required></ion-input>
+          </ion-item>
+          <ion-button (click)="takePicture()">Tomar Foto</ion-button>
+          <img *ngIf="fotoU" src="{{ fotoU }}" alt="Sin foto">
+          <div *ngIf="error" class="error-message">
+            {{ error }}
+          </div>
+          
+         
+          
+
+            
+          
+        </ion-list>
+      </ion-list>
+      <div class="registro">
+        <ion-button class="color" (click)="registro()" expand="block">registarse</ion-button> <ion-button class="color" expand="block">limpiar</ion-button>
+      </div>
+    </ion-card-content>
+
+
+
+  </ion-card>
+</div>
+<div *ngIf="usuarioAutenticado">
+  <p>La página de registro está deshabilitada porque el usuario ha iniciado sesión.</p>
+</div>
+
+  <app-componente1></app-componente1>
+
+  
+</ion-content>

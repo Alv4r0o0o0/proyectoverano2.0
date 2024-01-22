@@ -1,0 +1,52 @@
+.registro{
+
+    text-align: center;
+    font-size: 100px;
+}
+
+.color{
+    --background: #F43435;
+    --size: small;
+    --padding-top: 12px;
+    --padding-bottom: 12px;
+}
+
+
+.titulo{
+
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+   font-family: 'Times New Roman', Times, serif;
+   font-style: initial;
+    
+    font-size: 30px;
+}
+
+ion-content{
+
+ --background: rgb(255, 255, 255);
+ 
+
+}
+
+
+
+.logito{
+    border-radius: 120%;
+    width: 50px;
+    
+  }
+
+  ion-header ion-toolbar {
+    --background: #F43435;
+    --color:white; 
+  }
+
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-left: 15px;
+    margin-top: 2px; /* Ajusta este valor según tu diseño */
+    text-align: left; /* Opcional: ajusta la alineación del texto según tu diseño */
+ }  
