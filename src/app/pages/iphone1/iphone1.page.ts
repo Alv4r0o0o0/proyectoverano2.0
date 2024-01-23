@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BdregistroService } from 'src/app/services/bdregistro.service';
-
+import { AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-iphone1',
   templateUrl: './iphone1.page.html',
@@ -14,7 +14,7 @@ export class Iphone1Page implements OnInit {
   toggleContent() {
     this.showFullContent = !this.showFullContent;
   }
-  constructor(private route: ActivatedRoute, private bd: BdregistroService) { }
+  constructor(private route: ActivatedRoute, private bd: BdregistroService, private alertController: AlertController) { }
  
 
   ngOnInit() {
@@ -34,6 +34,16 @@ export class Iphone1Page implements OnInit {
   }
 
   }
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Gracias por su compra',
+      subHeader: '',
+      message: 'Que tenga un lindo dia ',
+      buttons: ['Salir'],
+    });
 
-
+    await alert.present();
+  }
 }
+
+
