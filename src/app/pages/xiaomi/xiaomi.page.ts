@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BdregistroService } from 'src/app/services/bdregistro.service';
 
 @Component({
   selector: 'app-xiaomi',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class XiaomiPage implements OnInit {
 
-  constructor() { }
+  constructor(private bd:BdregistroService) { }
+  productos: any[] = [];
 
   ngOnInit() {
+    this.bd.fetchProductos().subscribe(productos => {
+      this.productos = productos.filter(producto => producto.fk_id_categoria === 3);
+    });
   }
+  
 
 }

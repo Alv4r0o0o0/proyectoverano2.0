@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BdregistroService } from 'src/app/services/bdregistro.service';
 
 @Component({
   selector: 'app-samsung',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./samsung.page.scss'],
 })
 export class SamsungPage implements OnInit {
+  productos: any[] = [];
 
-  constructor() { }
+  constructor(private bd: BdregistroService) { }
 
   ngOnInit() {
+    this.bd.fetchProductos().subscribe(productos => {
+      this.productos = productos.filter(producto => producto.fk_id_categoria === 2);
+    });
   }
 
 }
