@@ -12,7 +12,7 @@
   <ion-card *ngFor="let p of productos">
     <ion-card-header class="ion-text-center">
       <div style="text-align: center;">
-      <img src="{{ p.foto }}" width="280px" height="400px" alt="Foto Producto">
+      <img src="{{ p.foto }}" width="280px" height="420px" alt="Foto Producto">
     </div>
       <ion-card-title style="font-size: 25px; color: #322E2E;">
         {{ p.nombre | uppercase }}
@@ -30,43 +30,5 @@
 
     </ion-card-content>
   </ion-card>
-    
-  
-  <ion-card-title class="titulo">Iphone</ion-card-title>
-  <ion-card class="bajar">
-    <div style="text-align: center;"><img style="max-width: 200px; width: 100%;" alt="" src="https://www.pcfactory.cl/public/foto/39365/4_1000.jpg?t=1606402209000" class="image" /></div>
-    <div><ion-text style="font-size: 14px; color: #757478; margin-left: 15px;"><b>APPLE</b></ion-text> </div> 
-      <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;"><b>IPHONE 12 PRO</b></ion-text><hr>
-      
-    
-  </ion-card>
-  <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;"><b>$ 927.790</b></ion-text> 
-  <div><ion-button fill="clear" class="btn" expand="block" [routerLink]="['/iphone1']">Ver producto</ion-button>
-      <hr size="5px" width="100%" color="gray"/>
-      <hr></div>
-  <ion-card class="bajar">
-    <div style="text-align: center;"><img style="max-width: 200px; width: 100%;" alt="" src="https://www.pcfactory.cl/public/foto/39367/4_1000.jpg?t=1606402737000" class="image" /></div>
-    <div><ion-text style="font-size: 14px; color: #757478; margin-left: 15px;"><b>APPLE</b></ion-text> </div> 
-      <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;"><b>IPHONE 13 PRO </b></ion-text><hr>
-        
-  </ion-card>
-  <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;"><b>$ 989.690</b></ion-text>
-  <ion-button fill="clear" class="btn" expand="block" [routerLink]="['/iphone2']">Ver producto</ion-button>
-      <hr size="5px" width="100%" color="gray"/>
-      <hr>
-  
-  <ion-card class="bajar">
-    
-    <div style="text-align: center;"><img style="max-width: 220px; width: 100%;" alt="" src="https://www.pcfactory.cl/public/foto/47036/2_1000.jpg?t=1665167846153" class="image" /></div>
-    <div><ion-text style="font-size: 14px; color: #757478; margin-left: 15px;"><b>APPLE</b></ion-text> </div> 
-      <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;"><b> IPHONE 14 PLUS</b></ion-text><hr>
-      
-       
-  </ion-card>
-  
-  <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;"><b>$ 1.099.990</b></ion-text> 
-  <ion-button fill="clear" class="btn" expand="block" [routerLink]="['/iphone3']">Ver producto</ion-button>
-      <hr size="5px" width="100%" color="gray"/>
-      <hr>
   
 </ion-content>
