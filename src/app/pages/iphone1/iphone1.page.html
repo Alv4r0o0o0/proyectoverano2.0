@@ -2,14 +2,15 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/iphone"></ion-back-button>
+      <ion-back-button></ion-back-button>
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <div> <img src="assets/icon/logo2.png" class="logito"></div>
+    <div style="display: inline-block;"> <img src="assets/icon/logo2.png" class="logito"></div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="bajar" [fullscreen]="true">
+  <div style="text-align: center;"><h3>Detalle del producto</h3></div>
   <ion-card *ngIf="producto">
     <ion-card-header class="ion-text-center">
       <div style="text-align: center;">
@@ -24,7 +25,7 @@
       <p style="color: red; font-size: 23px;">{{ producto.precio | currency }}</p>
       <p>{{ producto.descripcion }}</p>
       <br>
-      <ion-button fill="clear" class="btn" expand="block">Agregar al Carrito</ion-button>
+      <ion-button fill="clear" class="btn" expand="block">Comprar Ahora</ion-button>
     </ion-card-content>
   </ion-card>
 

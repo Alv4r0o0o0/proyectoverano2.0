@@ -10,25 +10,30 @@ import { BdregistroService } from 'src/app/services/bdregistro.service';
 export class Iphone1Page implements OnInit {
   showFullContent: boolean = false;
   producto: any;
+  idProducto: any;
   toggleContent() {
     this.showFullContent = !this.showFullContent;
   }
   constructor(private route: ActivatedRoute, private bd: BdregistroService) { }
+ 
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      if (params && params['state']) {
-        const idProducto = params['state'].idProducto;
-        this.cargarDetalleProducto(idProducto);
-      }
+    const idProductoParam = this.route.snapshot.paramMap.get('idProducto');
+
+  if (idProductoParam !== null && idProductoParam !== undefined) {
+    // Convertir a número solo si no es null o undefined
+    this.idProducto = +idProductoParam;
+
+    // Obtener la información del producto utilizando el servicio
+    this.bd.fetchProductos().subscribe(productos => {
+      this.producto = productos.find(producto => producto.id_producto === this.idProducto);
     });
+  } else {
+    // Manejar el caso en que idProducto sea null o undefined
+    console.error("idProducto es null o undefined");
   }
 
-  cargarDetalleProducto(idProducto: number) {
-    // Usa tu servicio para obtener los detalles del producto por su ID
-    this.bd.obtenerDetalleProducto(idProducto).subscribe(producto => {
-      this.producto = producto;
-    });
   }
+
 
 }

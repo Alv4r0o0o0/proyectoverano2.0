@@ -44,7 +44,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/iphone/iphone.module').then( m => m.IphonePageModule)
   },
   {
-    path: 'iphone1',
+    path: 'iphone1/:idProducto',
     loadChildren: () => import('./pages/iphone1/iphone1.module').then( m => m.Iphone1PageModule)
   },
   {

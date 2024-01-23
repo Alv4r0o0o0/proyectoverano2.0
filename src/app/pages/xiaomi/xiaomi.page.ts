@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BdregistroService } from 'src/app/services/bdregistro.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class XiaomiPage {
   totalCarrito: number = 0;
   productos: any[] = [];
 
-  constructor(private bd:BdregistroService) { }
+  constructor(private bd:BdregistroService, private router:Router) { }
   
 
   ngOnInit() {
@@ -19,11 +20,11 @@ export class XiaomiPage {
       this.productos = productos.filter(producto => producto.fk_id_categoria === 3);
     });
   }
+
+  verDetalleProducto(idProducto: number) {
+    // Navegar a la página de detalles del producto con el id_producto
+    this.router.navigate(['/iphone1', idProducto]);
+  }
   
 
-
-  agregarAlCarrito(nombre: string, imagen: string, precio: number) {
-    this.carrito.push({ nombre, imagen, precio });
-    this.totalCarrito += precio;
-  }
 }
