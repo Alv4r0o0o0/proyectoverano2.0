@@ -23,11 +23,21 @@
       <ion-button fill="clear" class="btn" expand="block" [routerLink]="['/samsung3']">Ver producto</ion-button>
       <hr size="5px" width="100%" color="gray"/>
     </ion-card>
+    <ion-card>
 
-    <ion-list>
-      
-      
-    </ion-list>
+      <ion-text class= "ub"> <b>¿ Podemos acceder a tu ubicacion ?</b></ion-text>
+   
+    <div [align]="'center'">
+      <ion-button fill="clear" class="btnn" expand="block" (click)="getCurrentLocation()">Si, acepto</ion-button>
+      <ion-button fill="clear" class="btn2" expand="block" id="present-alert">No, gracias</ion-button>
+      <ion-alert
+             trigger="present-alert"
+             header="Cuando usted estime accedemos a su ubicacion"
+            [buttons]="alertButtons"
+            
+      ></ion-alert>
+    </div>
+  </ion-card>
     
    
   
