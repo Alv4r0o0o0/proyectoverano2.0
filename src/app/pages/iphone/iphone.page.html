@@ -19,13 +19,11 @@
       </ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-item>
+
         <p style="color: #1b1b1b; font-size: 20px; margin-left: 15px;">{{ p.nombrep }}</p>
-      </ion-item>
-      <ion-item>
+     
         <p style="color: red; font-size: 23px;">{{ p.precio | currency }}</p>
-      </ion-item>
-      <p>{{ p.descripcion }}</p>
+        <p>{{ p.descripcion }}</p>
 
       <br>
       <ion-button fill="clear" class="btn" expand="block"  [routerLink]="['/iphone1']">Ver Producto</ion-button>
