@@ -10,8 +10,6 @@ import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { LocationAccuracy } from '@awesome-cordova-plugins/location-accuracy/ngx';
 
-
-
 @NgModule({
   declarations: [AppComponent],
   imports: [HttpClientModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule],
