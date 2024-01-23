@@ -348,5 +348,33 @@ export class BdregistroService {
         throw e; // Propagar el error para que el componente pueda manejarlo si es necesario
       });
   }
+
+  obtenerDetalleProducto(idProducto: number): Observable<any> {
+    return new Observable<any>((observer) => {
+      this.conexionBD.executeSql('SELECT * FROM producto WHERE id_producto = ?', [idProducto]).then(res => {
+        if (res.rows.length > 0) {
+          const producto = {
+            id_producto: res.rows.item(0).id_producto,
+            nombrep: res.rows.item(0).nombrep,
+            descripcion: res.rows.item(0).descripcion,
+            stock: res.rows.item(0).stock,
+            precio: res.rows.item(0).precio,
+            foto: res.rows.item(0).foto,
+            fk_id_categoria: res.rows.item(0).fk_id_categoria,
+            id_categoria: res.rows.item(0).id_categoria,
+            nombre: res.rows.item(0).nombre
+          };
+          observer.next(producto);
+          observer.complete();
+        } else {
+          observer.next(null);
+          observer.complete();
+        }
+      }).catch(e => {
+        observer.error(e);
+      });
+    });
+  }
+
 }
 
