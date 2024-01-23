@@ -7,7 +7,33 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true">
+
+  <ion-card *ngFor="let p of productos">
+    <ion-card-header class="ion-text-center">
+      <div style="text-align: center;">
+      <img src="{{ p.foto }}" width="280px" height="420px" alt="Foto Producto">
+    </div>
+      <ion-card-title style="font-size: 25px; color: #322E2E;">
+        {{ p.nombre | uppercase }}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+
+        <p style="color: #1b1b1b; font-size: 20px;">{{ p.nombrep }}</p>
+     
+        <p style="color: red; font-size: 23px;">{{ p.precio | currency }}</p>
+        <p>{{ p.descripcion }}</p>
+
+      <br>
+      <ion-button fill="clear" class="btn" expand="block"  [routerLink]="['/iphone1']">Ver Producto</ion-button>
+
+    </ion-card-content>
+  </ion-card>
+
+
+
 
   <ion-card-title class="titulo">Samsung</ion-card-title>
 <ion-card class="bajar">
