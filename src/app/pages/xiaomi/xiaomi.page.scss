@@ -47,3 +47,82 @@ ion-header ion-toolbar {
 .bajar{
   margin-bottom: 30px;
 }
+
+
+
+ .botones-achicados {
+  font-size: 12px;
+  padding: 6px 12px;
+
+}
+
+.imagen-achicada {
+  width: 210px; 
+  height: auto;
+}
+
+.imagen-achicada2 {
+  width: 170px; 
+  height: auto;
+}
+
+.botones-achicados {
+  font-size: 12px;
+  padding: 6px 12px;
+
+
+
+}
+.title {
+  color: rgb(255, 255, 255); 
+}
+
+$colors: (
+verde-personalizado: hwb(120 16% 45% / 0.918) 
+);
+
+.item{
+padding-inline: 100px;
+}
+.product-box {
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: rgb(255, 255, 255);
+box-shadow: 0 0 15px 0   rgb(255, 2, 2);
+border-radius: 40px;
+padding: 40px;
+margin: 20px;
+}
+.product-info {
+text-align: center;
+}
+ion-header ion-toolbar {
+--background: #322E2E; 
+}
+ion-header ion-toolbar:nth-child(2) {
+--background: #322E2E; 
+}
+ion-header, ion-toolbar, ion-content {
+--background: #ffffff; 
+}
+.btn{
+color: white;
+background-color: #F43435;
+border-radius: 50px ;
+margin-bottom: 30px;
+
+}
+.divDescuento{
+text-align: end;
+margin-right: 10px;
+margin-top: 10px;
+}
+.descuento{
+display: inline-block;
+background-color: #F43435;
+font-size: 18px;
+color: rgb(255, 255, 255);
+padding: 10px;
+border-radius: 8px;
+}

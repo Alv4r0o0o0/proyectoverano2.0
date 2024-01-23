@@ -3,13 +3,16 @@ import { BdregistroService } from 'src/app/services/bdregistro.service';
 
 @Component({
   selector: 'app-xiaomi',
-  templateUrl: './xiaomi.page.html',
-  styleUrls: ['./xiaomi.page.scss'],
+  templateUrl: 'xiaomi.page.html',
+  styleUrls: ['xiaomi.page.scss'],
 })
-export class XiaomiPage implements OnInit {
+export class XiaomiPage {
+  carrito: any[] = [];
+  totalCarrito: number = 0;
+  productos: any[] = [];
 
   constructor(private bd:BdregistroService) { }
-  productos: any[] = [];
+  
 
   ngOnInit() {
     this.bd.fetchProductos().subscribe(productos => {
@@ -18,4 +21,9 @@ export class XiaomiPage implements OnInit {
   }
   
 
+
+  agregarAlCarrito(nombre: string, imagen: string, precio: number) {
+    this.carrito.push({ nombre, imagen, precio });
+    this.totalCarrito += precio;
+  }
 }
