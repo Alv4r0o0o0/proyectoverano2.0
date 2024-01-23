@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
 import { BdregistroService } from 'src/app/services/bdregistro.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -41,5 +42,6 @@ export class LoginPage implements OnInit {
       this.usuarioAutenticado = estado;
     });
   }
+  
  
 }
