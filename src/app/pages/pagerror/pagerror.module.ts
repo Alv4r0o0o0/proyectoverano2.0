@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { Samsung3PageRoutingModule } from './samsung3-routing.module';
+import { PagerrorPageRoutingModule } from './pagerror-routing.module';
 
-import { Samsung3Page } from './samsung3.page';
+import { PagerrorPage } from './pagerror.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    Samsung3PageRoutingModule
+    PagerrorPageRoutingModule
   ],
-  declarations: [Samsung3Page]
+  declarations: [PagerrorPage]
 })
-export class Samsung3PageModule {}
+export class PagerrorPageModule {}
