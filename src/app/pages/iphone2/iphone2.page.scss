@@ -102,7 +102,7 @@ margin: 20px;
       
     }
     
-    ion-radio.radio-checked::part() {
+    ion-radio.radio-checked::part(mark) {
       width: 6px;
       height: 10px;
       

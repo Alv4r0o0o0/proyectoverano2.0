@@ -29,6 +29,8 @@
         <div class="divbtn">
           <!-- <ion-button (click)="loginAdmin()" size="small" expand="block" *ngIf="usuario === 'Admin'">Entrar administrador</ion-button> -->
           <ion-button (click)="login()" size="small" expand="block">Entrar</ion-button>
+          <h4>¿No tienes cuenta? !Registrate¡</h4>
+          <ion-button [routerLink]="'/registro'">Registrarse</ion-button>
         </div>
  
     </ion-list>

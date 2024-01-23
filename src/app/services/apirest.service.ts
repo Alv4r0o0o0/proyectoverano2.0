@@ -7,7 +7,7 @@ import { Observable, retry } from 'rxjs';
 })
 export class ApirestService {
 
-  apiURL = "https://jsonplaceholder.typicode.com/";
+  apiURL = "https://api.exchangerate-api.com/v4/latest/USD";
 
 
   constructor(private http:HttpClient) { }
