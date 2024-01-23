@@ -8,43 +8,79 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card-title class="titulo">Xiaomi</ion-card-title>
-  <ion-card class="bajar">
+    <div class="divDescuento"><ion-text class="descuento">20%</ion-text></div>
+
+  <!-- Producto 1 -->
+  <div class="product-box">
+    <div style="text-align: center;">
+      <img style="max-width: 300px; width: 100%;" alt="" src="https://media.solotodo.com/media/products/1570861_picture_1650710809.jpg" class="image" />
+    </div>
+    <div>
+      <ion-text style="font-size: 14px; color: #757478; margin-left: 15px;"><b>XIAOMI</b></ion-text>
+    </div>
+    <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;"><b>12 PRO</b></ion-text>
+    <hr>
+    <div><ion-text style="color: #757478; font-size: 15px; margin-left: 15px;"><s>$699.990</s></ion-text></div>
+    <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;">$550.000</ion-text>
+
+    <ion-button fill="clear" class="btn" expand="block" (click)="agregarAlCarrito('Xiaomi 12 Pro', 'https://media.solotodo.com/media/products/1570861_picture_1650710809.jpg', 550000)">
+      Agregar al carrito
+    </ion-button>
+    <hr size="5px" width="100%" color="gray"/>
+    <hr>
+  </div>
+
+  <!-- Producto 2 -->
+  <div class="product-box">
+    <div style="text-align: center;">
+      <img style="max-width: 300px; width: 100%;" alt="" src="https://media.solotodo.com/media/products/1457936_picture_1631629573.jpg" class="image" />
+    </div>
+    <div>
+      <ion-text style="font-size: 14px; color: #757478; margin-left: 15px;"><b>XIAOMI</b></ion-text>
+    </div>
+    <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;"><b>MI 11 ULTRA </b></ion-text>
+    <hr>
+    <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;">$874.990</ion-text>
+
+    <ion-button fill="clear" class="btn" expand="block" (click)="agregarAlCarrito('Xiaomi Mi 11 Ultra', 'https://media.solotodo.com/media/products/1457936_picture_1631629573.jpg', 874990)">
+      Agregar al carrito
+    </ion-button>
+    <hr size="5px" width="100%" color="gray"/>
+    <hr>
+  </div>
+
+  <!-- Producto 3 -->
+  <div class="product-box">
+    <div style="text-align: center;">
+      <img style="max-width: 300px; width: 100%;" alt="" src="https://media.solotodo.com/media/products/1766101_picture_1685100138.webp" class="image" />
+    </div>
+    <div>
+      <ion-text style="font-size: 14px; color: #757478; margin-left: 15px;"><b>XIAOMI</b></ion-text>
+    </div>
+    <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;"><b>13 ULTRA </b></ion-text>
+    <hr>
+    <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;">$1.399.990</ion-text>
+
+    <ion-button fill="clear" class="btn" expand="block" (click)="agregarAlCarrito('Xiaomi 13 Ultra', 'https://media.solotodo.com/media/products/1766101_picture_1685100138.webp', 1399990)">
+      Agregar al carrito
+    </ion-button>
+    <hr size="5px" width="100%" color="gray"/>
+    <hr>
+  </div>
+
+  <!-- Área del carrito -->
+  <div *ngIf="carrito.length > 0">
+    <h2>Carrito de Compras</h2>
+    <div *ngFor="let item of carrito">
+      <img [src]="item.imagen" alt="{{ item.nombre }}" class="imagen-achicada" />
+      <p>{{ item.nombre }}</p>
+      <p>{{ item.precio | currency }}</p>
+    </div>
+    <p>Total del Carrito: {{ totalCarrito | currency }}</p>
+    <ion-button fill="clear" class="btn" expand="block" [routerLink]="['/compra']">
+      Ir a Compra
+    </ion-button>
     
-  <div style="text-align: center;"><img style="max-width: 180px; width: 100%;" alt="" src="https://media.solotodo.com/media/products/1570861_picture_1650710809.jpg" class="image" /></div>
-  <div><ion-text style="font-size: 14px; color: #757478; margin-left: 15px;"><b>XIAOMI</b></ion-text> </div> 
-    <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;"><b>12 PRO</b></ion-text><hr>
-   
-    
-  </ion-card>
+
   
-  <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;"><b>$ 550.000</b></ion-text> 
-  <div><ion-button fill="clear" class="btn" expand="block" [routerLink]="['/xiaomi1']">Ver producto</ion-button>
-      <hr size="5px" width="100%" color="gray"/>
-      <hr></div>
-  <ion-card class="bajar">
-    <div style="text-align: center;"><img style="max-width: 180px; width: 100%;" alt="" src="https://media.solotodo.com/media/products/1457936_picture_1631629573.jpg" class="image" /></div>
-    <div><ion-text style="font-size: 14px; color: #757478; margin-left: 15px;"><b>XIAOMI</b></ion-text> </div> 
-      <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;"><b>MI 11 ULTRA </b></ion-text><hr>
-        
-         
-        
-  </ion-card>
-  <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;"><b>$ 874.990</b></ion-text>
-  <ion-button fill="clear" class="btn" expand="block" [routerLink]="['/xiaomi2']">Ver producto</ion-button>
-      <hr size="5px" width="100%" color="gray"/>
-      <hr>
-  
-  <ion-card class="bajar">
-    <div style="text-align: center;"><img style="max-width: 180px; width: 100%;" alt="" src="https://media.solotodo.com/media/products/1766101_picture_1685100138.webp" class="image" /></div>
-  <div><ion-text style="font-size: 14px; color: #757478; margin-left: 15px;"><b>XIAOMI</b></ion-text> </div> 
-    <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;"><b>13 ULTRA </b></ion-text><hr>
-    
-       
-  </ion-card>
-  <ion-text style="color: #000000; font-size: 18px; margin-left: 15px;"><b>$ 1.399.990</b></ion-text>  
-  <ion-button fill="clear" class="btn" expand="block" [routerLink]="['/xiaomi3']">Ver producto</ion-button>
-      <hr size="5px" width="100%" color="gray"/>
-      <hr>
-  
-  </ion-content>
+ 
