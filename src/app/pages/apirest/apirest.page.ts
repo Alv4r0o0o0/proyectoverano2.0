@@ -8,13 +8,13 @@ import { ApirestService } from 'src/app/services/apirest.service';
 })
 export class ApirestPage implements OnInit {
 
-  usuarios: any;
+  dolar: any;
 
   constructor(private api: ApirestService) { }
 
-  getUsuarios(){
-    this.api.obtenerUsuarios().subscribe(res=>{
-      this.usuarios = res;
+  getValores(){
+    this.api.obtenerValores().subscribe(res=>{
+      this.dolar = res;
     })
   }
 

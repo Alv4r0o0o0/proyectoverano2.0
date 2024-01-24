@@ -7,14 +7,14 @@ import { Observable, retry } from 'rxjs';
 })
 export class ApirestService {
 
-  apiURL = "https://api.exchangerate-api.com/v4/latest/USD";
+  apiURL = "https://mindicador.cl/api/{dolar}";
 
 
   constructor(private http:HttpClient) { }
 
 
-  obtenerUsuarios(): Observable<any>{
-    return this.http.get(this.apiURL + 'users').pipe(
+  obtenerValores(): Observable<any>{
+    return this.http.get(this.apiURL + 'dolar').pipe(
       retry(3)
     );
   }

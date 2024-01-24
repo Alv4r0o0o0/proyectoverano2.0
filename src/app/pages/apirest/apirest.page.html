@@ -5,13 +5,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button (click)="getUsuarios()">Consultar Usuarios</ion-button>
+  <ion-button (click)="getValores()">Consultar Usuarios</ion-button>
 
   <ion-list>
-    <ion-item *ngFor="let x of usuarios">
-      <ion-label>Nombre: {{ x.name }}</ion-label>
-      <ion-label>NickName: {{ x.username }}</ion-label>
-      <ion-label>Correo: {{ x.email }}</ion-label>
+    <ion-item *ngFor="let x of dolar">
+      <ion-label>Nombre: {{ x.valor }}</ion-label>
+     
     </ion-item>
   </ion-list>
 </ion-content>

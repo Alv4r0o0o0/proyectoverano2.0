@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'apirest',
     pathMatch: 'full'
   },
   {
@@ -87,8 +87,9 @@ const routes: Routes = [
   {
     path: 'modificarperfil',
     loadChildren: () => import('./pages/modificarperfil/modificarperfil.module').then( m => m.ModificarperfilPageModule)
-  },  {
-    path: 'pagerror',
+  },
+  {
+    path: '**',
     loadChildren: () => import('./pages/pagerror/pagerror.module').then( m => m.PagerrorPageModule)
   },
 
