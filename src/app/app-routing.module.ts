@@ -92,6 +92,8 @@ const routes: Routes = [
     path: '**',
     loadChildren: () => import('./pages/pagerror/pagerror.module').then( m => m.PagerrorPageModule)
   },
+  
+
 
 
 ];
