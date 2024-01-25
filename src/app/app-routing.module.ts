@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'apirest',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
@@ -92,7 +92,7 @@ const routes: Routes = [
     path: '**',
     loadChildren: () => import('./pages/pagerror/pagerror.module').then( m => m.PagerrorPageModule)
   },
-  
+ 
 
 
 
